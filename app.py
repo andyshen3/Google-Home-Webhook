@@ -3,13 +3,13 @@
 import urllib
 import json
 import os
+import call
+import send_sms
 
 from flask import Flask
 from flask import request
 from flask import make_response
-#from call.py import handleCall
 
-#from twilio.rest import Client
 
 # Flask app should start in global layout
 app = Flask(__name__)
@@ -162,8 +162,8 @@ def makeWebhookResult(req):
     elif req.get("result").get("action") == "find.manager":
     	return handleFindManager(req)
 
-    #elif req.get("result").get("action") == "file.case":
-    #	return handleCall()
+    elif req.get("result").get("action") == "file.case":
+    	return handleCall()
 
     else:
     	return {}
