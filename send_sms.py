@@ -2,7 +2,7 @@ import os
 from twilio import twiml
 from twilio.rest import Client
 
-def handleCall():
+def handleMessage():
 	client = Client(os.environ.get("TWILIO_ACCOUNT_SID"), os.environ.get("TWILIO_AUTH_TOKEN"))
 
 	message = client.messages.create(
