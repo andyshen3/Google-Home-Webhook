@@ -65,7 +65,10 @@ def handleFindCostCenter(req):
 	costCenter = {'andy shen': "AMT.1741G", 'frank wang': "AMT.1361G", \
 	'vincent wang': "AMT.1816G"}
 
-	speech = name + ", your cost center is " + str(costCenter[name]) + "."
+	if name in costCenter:
+		speech = name + ", your cost center is " + str(costCenter[name]) + "."
+	else:
+		speech = "Sorry, that user is not in our system."
 
 	print("Response:")
 	print(speech)
@@ -87,7 +90,10 @@ def handleFindOnboardDate(req):
 	onBoardDate = {'andy shen': "June 7th, 2017", 'frank wang': \
 	"February 18th, 2006", 'vincent wang': "August 28th, 2002"}
 
-	speech = name + ", your onboard date is " + str(onBoardDate[name]) + "."
+	if name in onBoardDate:
+		speech = name + ", your onboard date is " + str(onBoardDate[name]) + "."
+	else:
+		speech = "Sorry, that user is not in our system."
 
 	print("Response:")
 	print(speech)
@@ -116,7 +122,10 @@ def handleGetAcronym(req):
 	'DSM': "DSM stands for Deep Security Manager", \
 	'DD': "DD stands for Deep Discovery"}
 
-	speech = acronym[word] + "."
+	if word in acronym:
+		speech = acronym[word] + "."
+	else:
+		speech = "Sorry, I could not find anything about that acronym."
 
 	print("Response:")
 	print(speech)
@@ -138,7 +147,10 @@ def handleFindManager(req):
 	manager = {'andy shen': "felix jen", 'frank wang': "felix jen",\
 	'vincent wang': "max cheng"}
 
-	speech = user + "'s manager is " + manager[user] + "."
+	if user in manager:
+		speech = user + "'s manager is " + manager[user] + "."
+	else:
+		speech = "Sorry, that user is not in our system."
 
 	print("Response:")
 	print(speech)
