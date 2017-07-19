@@ -9,6 +9,7 @@ import send_sms
 from flask import Flask
 from flask import request
 from flask import make_response
+from twilio.rest import Client
 
 
 # Flask app should start in global layout
