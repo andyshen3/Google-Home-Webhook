@@ -10,6 +10,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 from call import handleCall
+from send_sms import handleMessage
 
 
 # Flask app should start in global layout
@@ -39,7 +40,10 @@ def handleFindPSID(req):
 
 	psid = {'andy shen': 27932, 'frank wang': 28592, 'vincent wang': 26371}
 
-	speech = name + ", your PSID is " + str(psid[name]) + "."
+	if name in psid:
+		speech = name + ", your PSID is " + str(psid[name]) + "."
+	else:
+		speech = "Sorry, that user is not in our system."
 
 	print("Response:")
 	print(speech)
