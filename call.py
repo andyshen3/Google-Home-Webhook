@@ -11,5 +11,3 @@ def handleCall():
 		url="http://demo.twilio.com/docs/voice.xml")
 
 	print(call.sid)
-
-handleCall()
