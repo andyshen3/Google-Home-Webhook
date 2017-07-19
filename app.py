@@ -9,7 +9,7 @@ import send_sms
 from flask import Flask
 from flask import request
 from flask import make_response
-from call.py import handleCall
+from call import handleCall
 
 
 # Flask app should start in global layout
