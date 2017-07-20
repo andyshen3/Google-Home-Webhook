@@ -8,6 +8,7 @@ def handleCall():
 	call = client.calls.create(
 		to=os.environ.get("MY_NUMBER"),
 		from_=os.environ.get("TWILIO_NUMBER"),
-		url="http://demo.twilio.com/docs/voice.xml")
+		url="http://demo.twilio.com/docs/voice.xml",
+		record = True)
 
 	print(call.sid)
