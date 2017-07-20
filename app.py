@@ -163,6 +163,28 @@ def handleFindManager(req):
 	"source": "apiai-findManager"
 	}
 
+def getCaseParameters(req):
+	result = req.get("result")
+	parameters = result.get("parameters")
+	
+	user = str.lower(parameters.get("user-name"))
+	case = parameters.get("case")
+	category = "none specified"
+
+	if(parameters.get("employee-service") != ""):
+		category = "employee-service"
+	elif(parameters.get("infrastructure") != ""):
+		category = "infrastructure"
+	elif(parameters.get("systems-applications") != ""):
+		category = "systems-applications"
+
+
+	data = [user, case, category]
+
+	return data
+
+
+
 def makeWebhookResult(req):
     if req.get("result").get("action") == "find.psid":
         return handleFindPSID(req)
@@ -180,7 +202,9 @@ def makeWebhookResult(req):
     	return handleFindManager(req)
 
     elif req.get("result").get("action") == "file.case":
-    	return handleCall()
+    	data = getCaseParameters(req)
+    	handleCall()
+    	return handleMessage(data)
 
     else:
     	return {}
