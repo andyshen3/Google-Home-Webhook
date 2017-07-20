@@ -8,7 +8,7 @@ def handleCall():
 	call = client.calls.create(
 		to=os.environ.get("MY_NUMBER"),
 		from_=os.environ.get("TWILIO_NUMBER"),
-		url="http://demo.twilio.com/docs/voice.xml",
+		url="https://github.com/andyshen3/google-home-webhook/blob/master/response.xml",
 		record = True)
 
 	print(call.sid)
