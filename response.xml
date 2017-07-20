@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Say voice="woman">You have a new case.</Say>
-    <Record maxLength="20" />
+    <Say voice="woman">You have a new case. Please check your email / text messages for details.</Say>
 </Response>
