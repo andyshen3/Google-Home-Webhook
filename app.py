@@ -163,6 +163,7 @@ def handleFindManager(req):
 	"source": "apiai-findManager"
 	}
 
+#Extract the parameters provided by the user, store the data.
 def getCaseParameters(req):
 	result = req.get("result")
 	parameters = result.get("parameters")
@@ -178,11 +179,9 @@ def getCaseParameters(req):
 	elif(parameters.get("systems-applications") != ""):
 		category = "systems-applications"
 
-
 	data = [user, case, category]
 
 	return data
-
 
 
 def makeWebhookResult(req):
@@ -204,6 +203,9 @@ def makeWebhookResult(req):
     elif req.get("result").get("action") == "file.case":
     	data = getCaseParameters(req)
     	return handleMessage(data)
+
+    elif req.get("result").get("action") == "DefaultFallbackIntent.DefaultFallbackIntent-yes":
+    	return handleCall()
 
     else:
     	return {}
