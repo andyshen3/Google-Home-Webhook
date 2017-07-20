@@ -203,7 +203,6 @@ def makeWebhookResult(req):
 
     elif req.get("result").get("action") == "file.case":
     	data = getCaseParameters(req)
-    	handleCall()
     	return handleMessage(data)
 
     else:
