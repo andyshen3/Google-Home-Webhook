@@ -3,7 +3,6 @@ from twilio import twiml
 from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse, Gather
 
-@app.route("/voice", methods=['GET', 'POST'])
 def voice():
     """Respond to incoming phone calls with a menu of options"""
     # Start our TwiML response
@@ -20,7 +19,6 @@ def voice():
 
     return str(resp)
 
-@app.route('/gather', methods=['GET', 'POST'])
 def gather():
     """Processes results from the <Gather> prompt in /voice"""
     # Start our TwiML response
