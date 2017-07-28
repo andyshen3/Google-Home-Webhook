@@ -10,10 +10,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 from call import handleCall
-from call import voice
-from call import gather
 from send_sms import handleMessage
-from twilio.twiml.voice_response import Gather, VoiceResponse, Say
 
 
 # Flask app should start in global layout
@@ -208,7 +205,7 @@ def makeWebhookResult(req):
     	return handleMessage(data)
 
     elif req.get("result").get("action") == "DefaultFallbackIntent.DefaultFallbackIntent-yes":
-    	return voice()
+    	return handleCall()
 
     else:
     	return {}
