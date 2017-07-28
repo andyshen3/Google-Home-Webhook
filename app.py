@@ -10,6 +10,8 @@ from flask import Flask
 from flask import request
 from flask import make_response
 from call import handleCall
+from call import voice
+from call import gather
 from send_sms import handleMessage
 
 
@@ -205,7 +207,7 @@ def makeWebhookResult(req):
     	return handleMessage(data)
 
     elif req.get("result").get("action") == "DefaultFallbackIntent.DefaultFallbackIntent-yes":
-    	return handleCall()
+    	return voice()
 
     else:
     	return {}
