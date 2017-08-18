@@ -38,7 +38,7 @@ def handleFindPSID(req):
 	parameters = result.get("parameters")
 	name = str.lower(parameters.get("user-name"))
 
-	psid = {'andy shen': 27932, 'frank wang': 28592, 'vincent wang': 26371}
+	psid = {'name': "value"}
 
 	if name in psid:
 		speech = name + ", your PSID is " + str(psid[name]) + "."
@@ -62,8 +62,7 @@ def handleFindCostCenter(req):
 	parameters = result.get("parameters")
 	name = str.lower(parameters.get("user-name"))
 
-	costCenter = {'andy shen': "AMT.1741G", 'frank wang': "AMT.1361G", \
-	'vincent wang': "AMT.1816G"}
+	costCenter = {'name': "value"}
 
 	if name in costCenter:
 		speech = name + ", your cost center is " + str(costCenter[name]) + "."
@@ -87,8 +86,7 @@ def handleFindOnboardDate(req):
 	parameters = result.get("parameters")
 	name = str.lower(parameters.get("user-name"))
 
-	onBoardDate = {'andy shen': "June 7th, 2017", 'frank wang': \
-	"February 18th, 2006", 'vincent wang': "August 28th, 2002"}
+	onBoardDate = {'name': "value"}
 
 	if name in onBoardDate:
 		speech = name + ", your onboard date is " + str(onBoardDate[name]) + "."
@@ -112,15 +110,7 @@ def handleGetAcronym(req):
 	parameters = result.get("parameters")
 	word = str.upper(parameters.get("acronyms"))
 
-	acronym = {'APAC': "APAC stands for Asia Pacific", \
-	'ACE': "ACE stands for Advanced Threat-Centric Education", \
-	'ADC': "ADC stands for Access Document Control", \
-	'APT': "APT stands for Advanced Persistent Threats", \
-	'BP': "BP stands for Business Process", \
-	'BU': "BU stands for Business Unit", \
-	'CPM': "CPM stands for Trend Micro Core Protection Module", \
-	'DSM': "DSM stands for Deep Security Manager", \
-	'DD': "DD stands for Deep Discovery"}
+	acronym = {'name': "value"}
 
 	if word in acronym:
 		speech = acronym[word] + "."
@@ -144,8 +134,7 @@ def handleFindManager(req):
 	parameters = result.get("parameters")
 	user = str.lower(parameters.get("user-name"))
 
-	manager = {'andy shen': "felix jen", 'frank wang': "felix jen",\
-	'vincent wang': "max cheng"}
+	manager = {'name': "value"}
 
 	if user in manager:
 		speech = user + "'s manager is " + manager[user] + "."
